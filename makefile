@@ -9,12 +9,14 @@ makedirs:
 debug:
 	makedirs
 	flex reglas.l
+	bison gramatica.y -d
 	clang lex.yy.c -o build/lexer.o -c
 	clang++ conjuntos -g main.cpp conjuntos.cpp automata.cpp funciones.cpp -Wl,build/lexer.o -o  bin/conjunto.exe
 
 
 compile: makedirs
 	flex reglas.l
+	bison gramatica.y -d
 	clang lex.yy.c -c -o build/lexer.o
 	clang++ main.cpp htmlWriter.cpp -Wl,build/lexer.o -o  bin/pp.exe
     

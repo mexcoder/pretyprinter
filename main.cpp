@@ -18,6 +18,9 @@ bool debug = false;
 
 int main(int argc, char *argv[]){
 
+	for(int x =0;x<1;x++);
+
+
 	if(argc == 1){ //sin parametros
 		cout<<"se requiere el archivo";
 		return -1;

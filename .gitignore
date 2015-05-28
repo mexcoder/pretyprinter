@@ -1,5 +1,8 @@
 *.exe
 *.dll
+*.cpp.html
 build/*
 bin/*
 lex.yy.c
+share/*
+gramatica.tab.*
