@@ -1,0 +1,5 @@
+*.exe
+*.dll
+build/*
+bin/*
+lex.yy.c
