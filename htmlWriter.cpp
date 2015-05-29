@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "htmlWriter.h"
 #include "token.h"
+#include "gramatica.tab.h"
 #include <algorithm>
 #include <string>
 
@@ -62,6 +63,8 @@ void htmlWriter::printFooter(){
 
 void htmlWriter::addToken(char* text, int tokenType){
 
+	signature+=tokenType;
+
 
 	if(tokenType == T_EOL){
 		file<<"<br />";
@@ -80,7 +83,7 @@ void htmlWriter::addToken(char* text, int tokenType){
 void htmlWriter::printHeader(){
 
 	file<<"<!doctype html>"<<endl
-		<<"<html>"<<endl
+		<<"	<html>"<<endl
 		<<"    <head>"<<endl
 		<<endl
 		<<"        <style>"<<endl

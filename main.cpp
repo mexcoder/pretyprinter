@@ -1,6 +1,7 @@
 #include <iostream>
 #include "htmlWriter.h"
 #include "token.h"
+#include "gramatica.tab.h"
 
 using namespace std;
 

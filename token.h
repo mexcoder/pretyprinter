@@ -18,7 +18,7 @@ enum token{
 	/*T_RESERVED*/
 	/*T_CONSTANT,*/
 	/*T_STRING*/
-	T_FOR,
+	/*T_FOR,*/
 	T_IF,
 	T_UNDEF,
 	T_EOL

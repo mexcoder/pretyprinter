@@ -29,3 +29,7 @@ debugrun:debug
 clean:
 	$(RM) conjuntos
 	$(RM) lex.yy.c
+	$(RM) gramatica.tab.c
+	$(RM) gramatica.tab.h
+	$(RMDIR) build
+	$(RMDIR) bin

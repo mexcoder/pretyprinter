@@ -1,6 +1,7 @@
 %option noyywrap
 %option case-insensitive
 	#include "token.h"
+	#include "gramatica.tab.h"
 	void recv_token(char*,int);
 	void add_tab();
 	void clear_tab();
@@ -18,6 +19,18 @@ id [[:alpha:]][[:alnum:]_]*
 %x macro
 %x macro2
 %%
+
+	/*for bison*/
+
+= return(T_EQUAL);
+, return(T_COMA);
+; return(T_SEMICOLON);
+\( return(T_L_PARENTESIS);
+\) return(T_R_PARENTESIS);
+for return(T_FOR);
+
+
+	/*legacy*/
 
 ; recv_token(yytext,T_OPERATOR);recv_token("",T_EOL);
 
