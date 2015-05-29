@@ -1,5 +1,6 @@
 %option noyywrap
 %option case-insensitive
+
 	#include "token.h"
 	void recv_token(char*,int);
 	void add_tab();
@@ -17,6 +18,7 @@ id [[:alpha:]][[:alnum:]_]*
 %x multiLineC
 %x macro
 %x macro2
+
 %%
 
 ; recv_token(yytext,T_OPERATOR);recv_token("",T_EOL);
