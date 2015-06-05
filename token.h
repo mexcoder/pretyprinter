@@ -21,5 +21,5 @@ enum token{
 	/*T_FOR,*/
 	T_IF,
 	T_UNDEF,
-	T_EOL
+	/*T_EOL = 400*/
 };

@@ -16,8 +16,8 @@ debug:
 
 compile: makedirs
 	flex reglas.l
-	bison gramatica.y -d
 	clang lex.yy.c -c -o build/lexer.o
+	clang gramatica.tab.c -c -o build/gram.o
 	clang++ main.cpp htmlWriter.cpp -Wl,build/lexer.o -o  bin/pp.exe
     
 run: all
