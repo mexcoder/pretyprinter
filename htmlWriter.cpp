@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream> 
 #include <stdlib.h>
 #include "htmlWriter.h"
 #include "token.h"
@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -106,20 +107,36 @@ void htmlWriter::printFooter(){
 		<<"                <span>Archivo:</span>"<<endl
 		<<"                <span class=\"attrib\">"<<this->orgFileName<<"</span>"<<endl
 		<<"                <span>("<<endl
-		<<"                    <span class=\"attrib\">"<<this->signature<<"</span>"<<endl
+		<<"                    <span class=\"attrib\">"<<this->getSignature()<<"</span>"<<endl
 		<<"                 )<span>"<<endl
 		<<"            </div>"<<endl
-		<<"            <span id=\"close\" onClick=\"alert('cerrar ventana')\">X</span>"<<endl
+		<<"            <span id=\"close\" onClick=\"window.close()\">X</span>"<<endl
 		<<"        </div>"<<endl
 		<<"    </body>"<<endl
 		<<"</html>";
 
 }
 
+string htmlWriter::getSignature(){
+	
+	stringstream ss;
+	int sign = 0;
+
+	for(auto a : this->signature){
+		ss<<a.second<<"-";
+		//sign += string(std::to_string(a)) + "-";
+		sign += a.second;
+	}
+	ss<<sign;
+
+
+	return ss.str();
+}
+
 
 void htmlWriter::addToken(char* text, int tokenType){
 
-	signature+=tokenType;
+	signature[tokenType]++;
 
 
 	if(tokenType == T_EOL){

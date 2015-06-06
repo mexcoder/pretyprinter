@@ -6,3 +6,4 @@ bin/*
 lex.yy.c
 share/*
 gramatica.tab.*
+test/*

@@ -1,4 +1,5 @@
 #include <fstream>
+#include <tr1/unordered_map>
 
 class htmlWriter{
 
@@ -9,7 +10,7 @@ class htmlWriter{
 		std::string replaceAll(std::string, std::string,std::string);
 		int tabs;
 		int onelineTabs;
-		int signature;
+		std::tr1::unordered_map< int, int > signature;
 		std::string fileName;
 		std::string orgFileName;
 		std::ofstream file;
@@ -17,6 +18,7 @@ class htmlWriter{
 		void printFooter();
 		void openFile();
 		void closeFile();
+		std::string getSignature();
 
 
 	public:
